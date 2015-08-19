@@ -1,112 +1,129 @@
-<?php
- $db = mysqli_connect("127.0.0.1","root",""); 
- if (!$db) {
- die("Database connection failed miserably: " . mysql_error());
- }
-
- $db_select = mysql_select_db("spike",$db);
- if (!$db_select) {
- die("Database selection also failed miserably: " . mysql_error());
- }
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>dashboard</title>
-<style type="text/css">
-  body{ 
-    color: #fff; 
-    padding:20px; 
-    }
+<style>
+#header {
+    background-color:#0066CC;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
 
-    .tile:hover{
-        transform:scale(1.2);
-    }
-    
-    .tileLargo:hover{
-        transform:scale(1.2);
-    }
-    .pagina{ 
-        width:auto; 
-        height:auto; 
+#header2 {
+    background-color:#6699FF;
+    color:white;
+    text-align:center;
+    padding:5px;
+    height: 40px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:400px;
+    width:100px;
+    float:left;
+    padding:5px;
+    color: #003366;        
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;   
+}
+#footer {
+    background-color:#0066CC;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    padding: 10px;
+}
+
+a {
+    display: block;
+    width: 60px;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.tile{ 
+    height:200px; 
+    width:100px; 
+    margin:0 5px 0 0; 
+    padding:2px;
+    float: left;
+    transition: all 0.7s ease;
         }
 
-    .linha{ 
-            width:auto; 
-            padding:5px; 
-            height:auto; 
-            display:table; 
-        }
-
-    .tile{ 
-        height:100px; 
-        width:100px; 
-        float:left; 
-        margin:0 5px 0 0; 
-        padding:2px;
-        transition: all 0.7s ease; 
-        } 
-    .tileLargo{ 
-        width:210px;
-        transition: all 0.7s ease; 
- 
+.tile:hover{
+        transform:scale(1.2);
     }
 
-    .amarelo{ 
-        background-color: #000099;
+.amarelo{ 
+        background-image: url('outbox2.png');
         background-repeat: no-repeat;
         }
 
-    .vermelho{ 
+.vermelho{ 
         background:#CD0000; 
         } 
 
-    .azul{ 
-            background:#4682B4; 
-            } 
-
-    .verde{ 
-            background-color: #2E8B57; 
-        }
-
-  </style>
-    <link rel="stylesheet" href="estilo.css"/> 
-    <meta charset="UTF-8"/> 
-    <script type="text/javascript" src="<http://code.jquery.com/jquery-1.7.2.min.js>"></script> 
-    <script type="text/javascript" src="script.js"></script> 
-</head> 
+.azul{ 
+        background:#4682B4; 
+            }
+.logo{
+    position: absolute; left:5px; top:-15px;
+}
+</style>
+</head>
 <body>
-    <img src="outbox-logo.png" alt="OUTBOX LOGO" width="auto" height="auto">
-    <h3 style="color:blue;">Welcome </h3>
+
+<div id="header">
+<img class="logo" src="outbox-logo.png" alt="OUTBOX LOGO">
+<h1 style="">OUTBOX HUB</h1>
+</div>
+
+<ul id="header2">
+  <li><a href="#home">HOME</a></li>
+  <li><a href="#news">NEWS</a></li>
+  <li><a href="#contact">CONTACTS</a></li>
+</ul>
+
+<div id="nav">
+MENU<br>
+TOPICS<br>
+LOG OUT<br>
+</div>
+
+<div id="section">
+<h3>Welcome! </h3>
     <div class="pagina"> 
         <div class="linha">
            <div class="tile amarelo">
-              <span class="titulo">TRAINEE</span><br/></div>
-           <div class="tile tileLargo vermelho">
-               <span class="titulo">FACILITATOR</span><br/></div>
-           <div class="tile azul">
-               <span class="titulo">HACKATHON</span><br/>
-        </div>
-        <div class="tile verde">
-               <span class="titulo">ACIA</span><br/>
-           </div>
-        </div> 
-        <div class="linha">
-           <div class="tile tileLargo amarelo">
-               <span class="titulo">I HAVE A PRODUCT</span><br/>
-           </div>
-           <div class="tile azul">
-               <span class="titulo">I HAVE AN IDEA</span><br/>
-           </div>
-           <div class="tile verde">
-               <span class="titulo">INTERNSHIP</span><br/>
-           </div>
+              <span class="titulo">STUDENT</span><br/></div>
            <div class="tile vermelho">
-               <span class="titulo">SERVICES</span><br/>
-           </div>
-        </div> 
+               <span class="titulo">TEACHER</span><br/></div>
+           <div class="tile azul">
+               <span class="titulo">LESSONS</span><br/></div>
+        </div>
     </div>
-    </body>
-    </html>
+</div>
+
+<div id="footer">
+Copyright © outbox.co.ug
+</div>
+
+</body>
+</html>
